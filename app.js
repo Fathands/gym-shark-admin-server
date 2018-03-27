@@ -10,6 +10,8 @@ const logger = require('koa-logger');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const crawler = require('./routes/crawler');
+const uploadImg = require('./routes/upload_img');
+const goods = require('./routes/goods');
 
 // 跨域操作
 const cors = require('koa2-cors');
@@ -63,6 +65,8 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods());
 app.use(users.routes(), users.allowedMethods());
 app.use(crawler.routes(), crawler.allowedMethods());
+app.use(uploadImg.routes(), uploadImg.allowedMethods());
+app.use(goods.routes(), goods.allowedMethods());
 
 // error-handling
 app.on('error', (err, ctx) => {

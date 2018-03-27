@@ -8,9 +8,8 @@ const Func = require('./func')
 module.exports = app => {
 
     //缓存拦截器
-    app.use(async (ctx, next) => { 
-        if (ctx.url == '/favicon.ico') return
-
+    app.use(async (ctx, next) => {
+        // if (ctx.url == '/favicon.ico') return
         await next()
         ctx.set('Cache-Control', 'must-revalidation')
         if (ctx.fresh) {

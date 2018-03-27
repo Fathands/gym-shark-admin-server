@@ -1,8 +1,7 @@
 const path = require('path')
 const auth = {
     admin_secret: 'admin-token',
-    tokenKey: 'Token-Auth',
-    whiteList: ['login', 'client_api'],
+    whiteList: ['login', 'register'],
     blackList: ['admin_api']
 }
 
